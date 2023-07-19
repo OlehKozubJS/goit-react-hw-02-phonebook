@@ -24,7 +24,7 @@ export class Phonebook extends Component {
 
     render() {
         return(
-            <div>
+            <form onSubmit={this.addNewContact}>
                 <div>
                     <h2>Phonebook</h2>
                     <div>
@@ -38,7 +38,7 @@ export class Phonebook extends Component {
                             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                             required
                         />
-                        <button onClick={this.addNewContact}>Add contact</button>
+                        <button>Add contact</button>
                     </div>
                 </div>
                 <div>
@@ -47,7 +47,7 @@ export class Phonebook extends Component {
                         {this.state.contacts.map(contact => <li key={contact.id}>{contact.name}</li>)}
                     </ul>
                 </div>
-            </div>
+            </form>
         );
     }
 }
