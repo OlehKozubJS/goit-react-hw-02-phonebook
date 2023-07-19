@@ -12,11 +12,11 @@ export class Phonebook extends Component {
 
     addNewContact = async () => {
         try {
-            const id = await nanoid();
-            const name = document.querySelector(".contactInput").value;
-            this.contactsData.push({id: id, name: name});
+            const idD = await nanoid();
+            const nameD = document.querySelector(".contactInput").value;
+            this.contactsData.push({id: idD, name: nameD});
             //this.setState(state => ({contacts: [...state.contacts].push({id: id, name: name})}));
-            this.setState({contacts: this.contactsData});
+            this.setState(state => ({contacts: this.contactsData}));
             console.log(this.state.contacts);
         }
         catch {
