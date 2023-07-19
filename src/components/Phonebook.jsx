@@ -14,7 +14,7 @@ export class Phonebook extends Component {
             const nameD = document.querySelector(".contactInput").value;
             let contactsData = this.state.contacts;
             contactsData.push({id: idD, name: nameD});
-            this.setState(state => ({contacts: contactsData}));
+            this.setState({contacts: contactsData});
             console.log(this.state.contacts);
         }
         catch {
@@ -25,18 +25,29 @@ export class Phonebook extends Component {
     render() {
         return(
             <div>
-                <h2>{this.state.name}</h2>
-                <input
-                    className="contactInput"
-                    type="text"
-                    name="name"
-                    //pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-                    pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
-                    //pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-                    title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-                    required
-                />
-                <button onClick={this.addNewContact}>Add contact</button>
+                <div>
+                    <h2>Phonebook</h2>
+                    <div>
+                        <h3>Name</h3>
+                        <input
+                            className="contactInput"
+                            type="text"
+                            name="name"
+                            //pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                            pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
+                            //pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+                            required
+                        />
+                        <button onClick={this.addNewContact}>Add contact</button>
+                    </div>
+                </div>
+                <div>
+                    <h2>Contacts</h2>
+                    <ul>
+                        {this.state.contacts.map(contact => <li key={contact.id}>{contact.name}</li>)}
+                    </ul>
+                </div>
             </div>
         );
     }
