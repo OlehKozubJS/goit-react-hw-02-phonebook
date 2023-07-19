@@ -1,7 +1,10 @@
 import { Component } from "react";
 import propTypes from "prop-types";
-import { nanoid } from "nanoid";
-model.id = nanoid() //=> "V1StGXR8_Z5jdHi6B-myT"
+//import { nanoid } from 'nanoid/async'
+
+async function createUser() {
+    user.id = await nanoid();
+}
 
 export class Phonebook extends Component {
     state = {
@@ -11,6 +14,7 @@ export class Phonebook extends Component {
 
     render() {
         return(
+            <h2>Name</h2>
             <input
                 type="text"
                 name="name"
@@ -18,6 +22,7 @@ export class Phonebook extends Component {
                 title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                 required
             />
+            <button>Add contact</button>
         );
     }
 }
