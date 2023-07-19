@@ -4,7 +4,10 @@ import { nanoid } from 'nanoid'
 model.id = nanoid() //=> "V1StGXR8_Z5jdHi6B-myT"
 
 class Phonebook extends Component {
-
+    state = {
+        contacts: [],
+        name: ''
+      }
 
     render() {
         return(
