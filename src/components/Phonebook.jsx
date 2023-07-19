@@ -23,12 +23,12 @@ export class Phonebook extends Component {
             console.log("Error!");
         }
 
-        e.currentTarget.reset();
+        document.querySelector(".formm").reset();
     }
 
     render() {
         return(
-            <form onSubmit={this.addNewContact}>
+            <form className="formm" onSubmit={this.addNewContact}>
                 <label>
                     <h2>Phonebook</h2>
                     <div>
@@ -42,7 +42,7 @@ export class Phonebook extends Component {
                             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                             required
                         />
-                        <button>Add contact</button>
+                        <button type="submit">Add contact</button>
                     </div>
                 </label>
                 <label>
