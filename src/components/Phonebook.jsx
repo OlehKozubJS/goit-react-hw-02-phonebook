@@ -9,13 +9,13 @@ async function createUser() {
 export class Phonebook extends Component {
     state = {
         contacts: [],
-        name: ''
+        name: this.props.name
     }
 
     render() {
         return(
             <div>
-                <h2>Name</h2>
+                <h2>{this.state.name}</h2>
                 <input
                     type="text"
                     name="name"
