@@ -1,19 +1,22 @@
 import { Component } from "react";
 import propTypes from "prop-types";
-//import { nanoid } from 'nanoid/async';
+import { nanoid } from 'nanoid/async';
 
 export class Phonebook extends Component {
     state = {
-        contacts: "",
+        contacts: [],
         name: this.props.name
     }
 
+    contactsData = [];
+
     addNewContact = async () => {
         try {
-            //const id = await nanoid();
+            const id = await nanoid();
             const name = document.querySelector(".contactInput").value;
-            //this.setState({contacts: this.state.contacts.push({id: id, name: name})});
-            this.setState({contacts: this.state.contacts + "++" + name});
+            this.contactsData.push({id: id, name: name});
+            //this.setState(state => ({contacts: [...state.contacts].push({id: id, name: name})}));
+            this.setState({contacts: this.contactsData});
             console.log(this.state.contacts);
         }
         catch {
