@@ -1,18 +1,19 @@
 import { Component } from "react";
 import propTypes from "prop-types";
-import { nanoid } from 'nanoid/async';
+//import { nanoid } from 'nanoid/async';
 
 export class Phonebook extends Component {
     state = {
-        contacts: [],
+        contacts: "",
         name: this.props.name
     }
 
     addNewContact = async () => {
         try {
-            const id = await nanoid();
+            //const id = await nanoid();
             const name = document.querySelector(".contactInput").value;
-            this.setState({contacts: [...this.state.contacts.push({id: id, name: name})]});
+            //this.setState({contacts: this.state.contacts.push({id: id, name: name})});
+            this.setState({contacts: this.state.contacts + "++" + name});
             console.log(this.state.contacts);
         }
         catch {
@@ -28,7 +29,7 @@ export class Phonebook extends Component {
                     className="contactInput"
                     type="text"
                     name="name"
-                    pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                    //pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                     title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                     required
                 />
