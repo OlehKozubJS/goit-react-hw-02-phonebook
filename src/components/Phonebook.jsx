@@ -13,6 +13,7 @@ export class Phonebook extends Component {
             const id = await nanoid();
             const name = document.querySelector(".contactInput").value;
             this.setState({contacts: this.state.contacts.push({id: id, name: name})});
+            console.log(this.state.contacts);
         }
         catch {
             console.log("Error!");
