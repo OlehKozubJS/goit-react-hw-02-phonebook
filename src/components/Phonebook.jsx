@@ -8,7 +8,9 @@ export class Phonebook extends Component {
         name: this.props.name
     }
 
-    addNewContact = async () => {
+    addNewContact = async (e) => {
+        e.preventDefault();
+
         try {
             const idD = await nanoid();
             const nameD = document.querySelector(".contactInput").value;
@@ -20,6 +22,8 @@ export class Phonebook extends Component {
         catch {
             console.log("Error!");
         }
+
+        e.currentTarget.reset();
     }
 
     render() {
