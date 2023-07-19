@@ -13,7 +13,7 @@ export const App = () => {
             }}
         >
               React homework template
-              <Phonebook name="Enter a Name" />
+              <Phonebook name="Enter new Name" />
         </div>
     );
 };
