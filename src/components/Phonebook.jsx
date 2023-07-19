@@ -8,8 +8,8 @@ export class Phonebook extends Component {
         name: this.props.name
     }
 
-    addNewContact = async (e) => {
-        e.preventDefault();
+    addNewContact = async (evt) => {
+        evt.preventDefault();
 
         try {
             const idD = await nanoid();
@@ -23,12 +23,12 @@ export class Phonebook extends Component {
             console.log("Error!");
         }
 
-        document.querySelector(".formm").reset();
+        document.querySelector(".phonebook").reset();
     }
 
     render() {
         return(
-            <form className="formm" onSubmit={this.addNewContact}>
+            <form className="phonebook" onSubmit={this.addNewContact}>
                 <label>
                     <h2>Phonebook</h2>
                     <div>
