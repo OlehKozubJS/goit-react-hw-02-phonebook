@@ -8,7 +8,7 @@ export class Phonebook extends Component {
         name: this.props.name
     }
 
-    addNewContact = async (evt) => {
+    addNewContact = async evt => {
         evt.preventDefault();
 
         try {
