@@ -54,6 +54,7 @@ export class Phonebook extends Component {
                         />
                     </label>
                     <label>
+                        <h3>Number</h3>
                         <input
                         type="tel"
                         name="number"
