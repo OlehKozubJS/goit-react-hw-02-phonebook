@@ -23,7 +23,7 @@ export class Phonebook extends Component {
             console.log("Error!");
         }
 
-        document.querySelector(".phonebook").reset();
+        this.reset();
     }
 
     render() {
