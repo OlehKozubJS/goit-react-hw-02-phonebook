@@ -25,6 +25,10 @@ export class Phonebook extends Component {
 
         this.reset();
     }
+    
+    reset = () => {
+        this.setState({ ...INITIAL_STATE });
+    };
 
     render() {
         return(
