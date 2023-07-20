@@ -2,6 +2,12 @@ import { Component } from "react";
 import propTypes from "prop-types";
 import { nanoid } from 'nanoid/async';
 
+const INITIAL_STATE = {
+    login: "",
+    email: "",
+    password: "",
+};
+
 export class Phonebook extends Component {
     state = {
         contacts: [],
