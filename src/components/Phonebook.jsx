@@ -38,10 +38,10 @@ export class Phonebook extends Component {
 
     render() {
         return(
-            <form className="phonebook" onSubmit={this.addNewContact}>
-                <label>
-                    <h2>Phonebook</h2>
-                    <div>
+            <>
+                <h2>Phonebook</h2>
+                <form className="phonebook" onSubmit={this.addNewContact}>
+                    <label>
                         <h3>Name</h3>
                         <input
                             className="contactInput"
@@ -52,25 +52,25 @@ export class Phonebook extends Component {
                             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                             required
                         />
-                        <button type="submit">Add contact</button>
-                    </div>
-                </label>
-                <label>
+                    </label>
+                    <label>
+                        <input
+                        type="tel"
+                        name="number"
+                        pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+                        title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+                        required
+                        />
+                    </label>
+                    <button type="submit">Add contact</button>
+                </form>
+                <div>
                     <h2>Contacts</h2>
                     <ul>
                         {this.state.contacts.map(contact => <li key={contact.id}>{contact.name}</li>)}
                     </ul>
-                </label>
-                <label>
-                    <input
-                    type="tel"
-                    name="number"
-                    pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-                    title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-                    required
-                    />
-                </label>
-            </form>
+                </div>
+            </>
         );
     }
 }
