@@ -38,7 +38,7 @@ export class Phonebook extends Component {
 
     render() {
         return(
-            <>
+            <div>
                 <h2>Phonebook</h2>
                 <form className="phonebook" onSubmit={this.addNewContact}>
                     <label>
@@ -70,7 +70,7 @@ export class Phonebook extends Component {
                         {this.state.contacts.map(contact => <li key={contact.id}>{contact.name}</li>)}
                     </ul>
                 </div>
-            </>
+            </div>
         );
     }
 }
