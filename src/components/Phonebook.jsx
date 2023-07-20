@@ -11,7 +11,8 @@ const INITIAL_STATE = {
 export class Phonebook extends Component {
     state = {
         contacts: [],
-        name: this.props.name
+        name: "",
+        number: ""
     }
 
     addNewContact = async evt => {
