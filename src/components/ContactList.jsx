@@ -2,7 +2,6 @@ import { Component } from "react";
 import propTypes from "prop-types";
 
 export class ContactList extends Component {
-
     render() {
         return (
             <ul>
