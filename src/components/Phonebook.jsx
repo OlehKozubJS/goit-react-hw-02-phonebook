@@ -10,9 +10,8 @@ export class Phonebook extends Component {
         number: ""
     }
 
-    addNewContact = async evt => {
-        evt.preventDefault();
-
+    addNewContact = async event => {
+        event.preventDefault();
 
         const idD = nanoid();
         const nameD = document.querySelector(".contactInput").value;
@@ -21,8 +20,6 @@ export class Phonebook extends Component {
         this.setState({contacts: contactsData});
         console.log(this.state.contacts);
 
-
-
         this.reset();
     }
     
@@ -30,7 +27,7 @@ export class Phonebook extends Component {
         this.setState({ filter: "", name: "", number: "" });
     };
 
-    findContactsByName = () => {
+    findContactsByName = (event) => {
 
     };
 
