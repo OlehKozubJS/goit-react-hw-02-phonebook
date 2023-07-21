@@ -12,6 +12,7 @@ const INITIAL_STATE = {
 export class Phonebook extends Component {
     state = {
         contacts: [],
+        filter: "",
         name: "",
         number: ""
     }
