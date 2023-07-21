@@ -6,6 +6,7 @@ const INITIAL_STATE = {
     login: "",
     email: "",
     password: "",
+    number: ""
 };
 
 export class Phonebook extends Component {
