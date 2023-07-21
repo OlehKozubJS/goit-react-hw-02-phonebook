@@ -34,7 +34,7 @@ export class Phonebook extends Component {
 
     findContactsByName = event => {
         const userSearchData = event.currentTarget.value;
-        const contactList = document.querySelector(".contactList");
+        //const contactList = document.querySelector(".contactList");
 
         if (userSearchData === "") {
             return this.renderContactList();
