@@ -49,7 +49,7 @@ export class Phonebook extends Component {
             contactList.append(...this.renderContactList());
         }
         else { 
-            const searchResults = this.state.contacts.filter(contact => contact.name.toLowerCase().includes(userSearchData));
+            const searchResults = this.state.contacts.filter(contact => contact.name.toLowerCase().includes(userSearchData.toLowerCase()));
             console.log(searchResults);
             contactList.append(...searchResults.map(searchResult => <li key={searchResult.id}>{searchResult.name}: {searchResult.number}</li>));
         }
