@@ -42,7 +42,7 @@ export class Phonebook extends Component {
     render() {
         return(
             <div>
-                <h2>Phonebook</h2>
+                <h1>Phonebook</h1>
                 <form className="phonebook" onSubmit={this.addNewContact}>
                     <label>
                         <h3>Name</h3>
