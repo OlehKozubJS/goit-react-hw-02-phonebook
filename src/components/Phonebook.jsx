@@ -13,10 +13,10 @@ export class Phonebook extends Component {
     addNewContact = async event => {
         event.preventDefault();
 
-        const {} = event.currentTarget.elements;
+        const {name, number} = event.currentTarget.elements;
 
-        const idD = nanoid();
-        const nameD = document.querySelector(".contactInput").value;
+        const idData = nanoid();
+        const nameData = document.querySelector(".contactInput").value;
         let contactsData = this.state.contacts;
         contactsData.push({id: idD, name: nameD});
         this.setState({contacts: contactsData});
