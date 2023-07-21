@@ -57,7 +57,7 @@ export class Phonebook extends Component {
         return(
             <div>
                 <h1>Phonebook</h1>
-                <ContactForm />
+                <ContactForm submitFunction={this.addNewContact} />
                 <h2>Contacts</h2>
                 <h3>Find contacts by name</h3>
                 <input type="text" onChange={this.findContactsByName} />
