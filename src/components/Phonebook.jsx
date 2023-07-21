@@ -29,7 +29,7 @@ export class Phonebook extends Component {
     }
 
     findContactsByName = () => {
-        const userSearchData = document.querySelector(".filterInput").value;
+        let userSearchData = document.querySelector(".filterInput").value;
         const searchResults = this.state.contacts.filter(contact => contact.name.toLowerCase().includes(userSearchData.toLowerCase()));
         return searchResults;
     };
@@ -44,7 +44,7 @@ export class Phonebook extends Component {
                 <h1>Phonebook</h1>
                 <ContactForm submitFunction={this.addNewContact} />
                 <h2>Contacts</h2>
-                <Filter className="filterInput" changeFunction={this.handleChange} />
+                <Filter className="filterInput" value={this.state.filter} changeFunction={this.handleChange} />
                 <ContactList className="contactList" items={this.state.filter === "" ? this.state.contacts : this.findContactsByName() } />
             </div>
         );
