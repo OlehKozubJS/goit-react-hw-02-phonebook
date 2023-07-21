@@ -29,7 +29,7 @@ export class Phonebook extends Component {
     }
 
     renderContactList = () => {
-        return this.state.contacts.map(contact => <li key={contact.id}>{contact.name}: {contact.number}</li>);
+        return this.state.contacts;
     }
 
     findContactsByName = event => {
