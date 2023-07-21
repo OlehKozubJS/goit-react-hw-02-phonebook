@@ -53,7 +53,7 @@ export class Phonebook extends Component {
                 <h1>Phonebook</h1>
                 <ContactForm submitFunction={this.addNewContact} />
                 <h2>Contacts</h2>
-                <Filter />
+                <Filter changeFunction={this.findContactsByName} />
                 <ContactList item={this.renderContactList()} />
             </div>
         );
