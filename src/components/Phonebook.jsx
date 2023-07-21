@@ -30,9 +30,15 @@ export class Phonebook extends Component {
         this.setState({ filter: "", name: "", number: "" });
     };
 
+    renderContactList = () => {
+        return this.state.contacts.map(contact => <li key={contact.id}>{contact.name}: </li>);
+    }
+
     findContactsByName = event => {
         const userSearchData = event.currentTarget.value;
+        const contactList = document.querySelector(".contactList");
 
+        contactList.innerHTML = this.state.contacts.filter(contact => contact.name.includes(userSearchData));
     };
 
     render() {
@@ -68,8 +74,8 @@ export class Phonebook extends Component {
                     <h2>Contacts</h2>
                     <h3>Find contacts by name</h3>
                     <input type="text" onChange={this.findContactsByName} />
-                    <ul>
-                        {this.state.contacts.map(contact => <li key={contact.id}>{contact.name}: </li>)}
+                    <ul className="contactList">
+                        {this.renderContactList()}
                     </ul>
                 </div>
             </div>
