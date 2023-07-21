@@ -1,6 +1,6 @@
 import { Component } from "react";
 //import propTypes from "prop-types";
-import { nanoid } from 'nanoid';
+//import { nanoid } from 'nanoid';
 
 export class ContactForm extends Component {
     /*state = {
