@@ -23,6 +23,7 @@ export class Phonebook extends Component {
         const idData = nanoid();
         const nameData = name.value;
         const numberData = number.value;
+        
         let contactsData = this.state.contacts;
         contactsData.push({ id: idData, name: nameData, number: numberData });
         this.setState({contacts: contactsData});
