@@ -19,7 +19,7 @@ export class Phonebook extends Component {
         const nameData = name.value;
         const numberData = number.value;
         let contactsData = this.state.contacts;
-        contactsData.push({ id: idData, name: nameData, numberData: numberData });
+        contactsData.push({ id: idData, name: nameData, number: numberData });
         this.setState({contacts: contactsData});
         console.log(this.state.contacts);
 
