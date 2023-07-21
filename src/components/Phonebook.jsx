@@ -17,22 +17,14 @@ export class Phonebook extends Component {
     addNewContact = async event => {
         event.preventDefault();
 
-        const {name, number} = event.currentTarget.elements;
-        const idData = nanoid();
-        const nameData = name.value;
-        const numberData = number.value;
-        
+        const {name, number} = event.currentTarget.elements;     
         let contactsData = this.state.contacts;
-        contactsData.push({ id: idData, name: nameData, number: numberData });
+        contactsData.push({ id: nanoid(), name: name.value, number: number.value });
         this.setState({contacts: contactsData});
         console.log(this.state.contacts);
 
         event.currentTarget.reset();
     }
-    
-    reset = () => {
-        this.setState({ filter: "", name: "", number: "" });
-    };
 
     renderContactList = () => {
         return this.state.contacts.map(contact => <li key={contact.id}>{contact.name}: {contact.number}</li>);
