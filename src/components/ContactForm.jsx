@@ -23,7 +23,7 @@ export class ContactForm extends Component {
     }
     
     reset = () => {
-        this.setState({ filter: "", name: "", number: "" });
+        this.setState({ id: "", name: "", number: "" });
     };
 
     render() {
