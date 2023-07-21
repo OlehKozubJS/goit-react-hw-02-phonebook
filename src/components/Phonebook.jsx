@@ -18,7 +18,7 @@ export class Phonebook extends Component {
         const idData = nanoid();
         const nameData = document.querySelector(".contactInput").value;
         let contactsData = this.state.contacts;
-        contactsData.push({id: idD, name: nameD});
+        contactsData.push({id: idData, name: nameData});
         this.setState({contacts: contactsData});
         console.log(this.state.contacts);
 
