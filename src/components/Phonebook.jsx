@@ -2,13 +2,6 @@ import { Component } from "react";
 //import propTypes from "prop-types";
 import { nanoid } from 'nanoid/async';
 
-const INITIAL_STATE = {
-    login: "",
-    email: "",
-    password: "",
-    number: ""
-};
-
 export class Phonebook extends Component {
     state = {
         contacts: [],
@@ -20,23 +13,25 @@ export class Phonebook extends Component {
     addNewContact = async evt => {
         evt.preventDefault();
 
-        try {
-            const idD = await nanoid();
-            const nameD = document.querySelector(".contactInput").value;
-            let contactsData = this.state.contacts;
-            contactsData.push({id: idD, name: nameD});
-            this.setState({contacts: contactsData});
-            console.log(this.state.contacts);
-        }
-        catch {
-            console.log("Error!");
-        }
+
+        const idD = nanoid();
+        const nameD = document.querySelector(".contactInput").value;
+        let contactsData = this.state.contacts;
+        contactsData.push({id: idD, name: nameD});
+        this.setState({contacts: contactsData});
+        console.log(this.state.contacts);
+
+
 
         this.reset();
     }
     
     reset = () => {
-        this.setState({ ...INITIAL_STATE });
+        this.setState({ filter: "", name: "", number: "" });
+    };
+
+    findContactsByName = () => {
+
     };
 
     render() {
@@ -70,8 +65,10 @@ export class Phonebook extends Component {
                 </form>
                 <div>
                     <h2>Contacts</h2>
+                    <h3>Find contacts by name</h3>
+                    <input type="text" onChange={this.findContactsByName} />
                     <ul>
-                        {this.state.contacts.map(contact => <li key={contact.id}>{contact.name}</li>)}
+                        {this.state.contacts.map(contact => <li key={contact.id}>{contact.name}: </li>)}
                     </ul>
                 </div>
             </div>
