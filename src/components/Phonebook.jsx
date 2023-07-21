@@ -46,7 +46,7 @@ export class Phonebook extends Component {
         else { 
             const searchResults = this.state.contacts.filter(contact => contact.name.toLowerCase().includes(userSearchData));
             console.log(searchResults);
-            contactList.append(...searchResults.map(contact => (<li key={contact.id}>{contact.name}: {contact.number}</li>)));
+            contactList.append(...searchResults.map(searchResult => <li key={searchResult.id}>{searchResult.name}: {searchResult.number}</li>));
         }
     };
 
