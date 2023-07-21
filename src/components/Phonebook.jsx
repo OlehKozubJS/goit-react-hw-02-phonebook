@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { ContactForm } from "./ContactForm";
 import { ContactList } from "./ContactList";
-import { Filter } from "./Filter";
+//import { Filter } from "./Filter";
 //import propTypes from "prop-types";
 import { nanoid } from 'nanoid';
 
@@ -32,25 +32,30 @@ export class Phonebook extends Component {
         const userSearchData = document.querySelector(".filterInput").value;
         const searchResults = this.state.contacts.filter(contact => contact.name.toLowerCase().includes(userSearchData.toLowerCase()));
         return searchResults;
-    };
+    }
 
     handleChange = evt => {
         this.setState({ filter: evt.currentTarget.value });
-    };
+    }
 
     render() {
         return(
+
+
             <div>
                 <h1>Phonebook</h1>
                 <ContactForm submitFunction={this.addNewContact} />
                 <h2>Contacts</h2>
-                <Filter className="filterInput" changeFunction={this.handleChange} />
+
+                <input className="filterInput" value={this.state.filter} type="text" onChange={this.handleChange} />
                 <ContactList className="contactList" items={this.state.filter === "" ? this.state.contacts : this.findContactsByName() } />
             </div>
         );
     }
 }
 /*
+<Filter className="filterInput" changeFunction={this.handleChange} />
+
 Phonebook.propTypes = {
     name: propTypes.string.isRequired
 };
