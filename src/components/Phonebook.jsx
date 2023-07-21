@@ -60,14 +60,12 @@ export class Phonebook extends Component {
             <div>
                 <h1>Phonebook</h1>
                 <ContactForm submitFunction={this.addNewContact} />
-                <div>
-                    <h2>Contacts</h2>
-                    <h3>Find contacts by name</h3>
-                    <input type="text" onChange={this.findContactsByName} />
-                    <ul className="contactList">
-                        {this.renderContactList()}
-                    </ul>
-                </div>
+                <h2>Contacts</h2>
+                <h3>Find contacts by name</h3>
+                <input type="text" onChange={this.findContactsByName} />
+                <ul className="contactList">
+                    {this.renderContactList()}
+                </ul>
             </div>
         );
     }
