@@ -36,14 +36,12 @@ export class Phonebook extends Component {
         const userSearchData = event.currentTarget.value;
         const contactList = document.querySelector(".contactList");
 
-        contactList.innerHTML = "";
-
         if (userSearchData === "") {
-            contactList.append(...this.renderContactList());
+            return this.renderContactList();
         }
         else { 
             const searchResults = this.state.contacts.filter(contact => contact.name.toLowerCase().includes(userSearchData.toLowerCase()));
-            contactList.append(...searchResults);
+            return searchResults;
         }
     };
 
