@@ -1,6 +1,6 @@
 import { Component } from "react";
 //import propTypes from "prop-types";
-import { nanoid } from 'nanoid/async';
+import { nanoid } from 'nanoid';
 
 export class Phonebook extends Component {
     state = {
@@ -42,7 +42,8 @@ export class Phonebook extends Component {
             contactList.innerHTML = this.renderContactList();
         }
         else { 
-            contactList.innerHTML = this.state.contacts.filter(contact => contact.name.includes(userSearchData));
+            const searchResults = this.state.contacts.filter(contact => contact.name.includes(userSearchData));
+            contactList.innerHTML = searchResults.map(contact => <li key={contact.id}>{contact.name}: {contact.number}</li>);
         }
     };
 
