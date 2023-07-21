@@ -20,7 +20,6 @@ export class Phonebook extends Component {
         event.preventDefault();
 
         const {name, number} = event.currentTarget.elements;
-
         const idData = nanoid();
         const nameData = name.value;
         const numberData = number.value;
