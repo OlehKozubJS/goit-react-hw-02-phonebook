@@ -1,7 +1,6 @@
 import { Component } from "react";
 //import propTypes from "prop-types";
 import { nanoid } from 'nanoid';
-import { ReactDOM } from "react";
 
 export class Phonebook extends Component {
     state = {
@@ -47,8 +46,7 @@ export class Phonebook extends Component {
         contactList.innerHTML = "";
 
         if (userSearchData === "") {
-            //contactList.append(...this.renderContactList());
-            ReactDOM.render(<div>Hello!</div>, contactList);
+            contactList.append(...this.renderContactList());
         }
         else { 
             const searchResults = this.state.contacts.filter(contact => contact.name.toLowerCase().includes(userSearchData.toLowerCase()));
