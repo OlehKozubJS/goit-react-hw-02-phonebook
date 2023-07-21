@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { ContactForm } from "./ContactForm";
+import { ContactList } from "./ContactList";
 //import propTypes from "prop-types";
 import { nanoid } from 'nanoid';
 
@@ -51,11 +52,8 @@ export class Phonebook extends Component {
                 <h1>Phonebook</h1>
                 <ContactForm submitFunction={this.addNewContact} />
                 <h2>Contacts</h2>
-                <h3>Find contacts by name</h3>
-                <input type="text" onChange={this.findContactsByName} />
-                <ul className="contactList">
-                    {this.renderContactList()}
-                </ul>
+                <Filter />
+                <ContactList item={this.renderContactList()} />
             </div>
         );
     }
