@@ -76,7 +76,8 @@ export class Phonebook extends Component {
         );
     }
 }
-
+/*
 Phonebook.propTypes = {
     name: propTypes.string.isRequired
 };
+*/
