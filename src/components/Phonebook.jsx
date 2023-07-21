@@ -13,6 +13,8 @@ export class Phonebook extends Component {
     addNewContact = async event => {
         event.preventDefault();
 
+        const {} = event.currentTarget.elements;
+
         const idD = nanoid();
         const nameD = document.querySelector(".contactInput").value;
         let contactsData = this.state.contacts;
@@ -20,7 +22,7 @@ export class Phonebook extends Component {
         this.setState({contacts: contactsData});
         console.log(this.state.contacts);
 
-        this.reset();
+        event.currentTarget.reset();
     }
     
     reset = () => {
@@ -28,6 +30,7 @@ export class Phonebook extends Component {
     };
 
     findContactsByName = event => {
+        const userSearchData = event.currentTarget.value;
 
     };
 
