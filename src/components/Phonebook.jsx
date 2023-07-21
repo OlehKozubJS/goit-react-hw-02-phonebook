@@ -27,7 +27,7 @@ export class Phonebook extends Component {
         this.setState({ filter: "", name: "", number: "" });
     };
 
-    findContactsByName = (event) => {
+    findContactsByName = event => {
 
     };
 
