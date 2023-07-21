@@ -1,8 +1,8 @@
 import { Component } from "react";
 //import propTypes from "prop-types";
-import { nanoid } from 'nanoid';
+//import { nanoid } from 'nanoid';
 
-export class Phonebook extends Component {
+export class ContactForm extends Component {
     render() {
         return(
             <form className="phonebook" onSubmit={this.props.submitFunction}>
