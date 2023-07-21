@@ -54,7 +54,7 @@ export class Phonebook extends Component {
                 <ContactForm submitFunction={this.addNewContact} />
                 <h2>Contacts</h2>
                 <Filter changeFunction={this.findContactsByName} />
-                <ContactList item={this.renderContactList()} />
+                <ContactList items={this.renderContactList()} />
             </div>
         );
     }
