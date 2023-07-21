@@ -3,7 +3,7 @@ import { Component } from "react";
 import { nanoid } from 'nanoid';
 
 export class ContactForm extends Component {
-    state = {
+    /*state = {
         id: "",
         name: "",
         number: ""
@@ -24,7 +24,7 @@ export class ContactForm extends Component {
     
     reset = () => {
         this.setState({ id: "", name: "", number: "" });
-    };
+    };*/
 
     render() {
         return(
