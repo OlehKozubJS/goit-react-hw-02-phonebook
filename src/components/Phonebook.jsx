@@ -12,7 +12,7 @@ export class Phonebook extends Component {
             {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
             {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
             {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
-          ],
+        ],
         filter: "",
     }
 
@@ -28,21 +28,14 @@ export class Phonebook extends Component {
         event.currentTarget.reset();
     }
 
-    renderContactList = () => {
-        return this.state.contacts;
-    }
+    findContactsByName = () => {
+        const userSearchData = document.querySelector(".filterInput").value;
+        const searchResults = this.state.contacts.filter(contact => contact.name.toLowerCase().includes(userSearchData.toLowerCase()));
+        return searchResults;
+    };
 
-    findContactsByName = event => {
-        const userSearchData = event.currentTarget.value;
-        //const contactList = document.querySelector(".contactList");
-
-        if (userSearchData === "") {
-            return this.renderContactList();
-        }
-        else { 
-            const searchResults = this.state.contacts.filter(contact => contact.name.toLowerCase().includes(userSearchData.toLowerCase()));
-            return searchResults;
-        }
+    handleChange = evt => {
+        this.setState({ filter: evt.currentTarget.value });
     };
 
     render() {
@@ -51,8 +44,8 @@ export class Phonebook extends Component {
                 <h1>Phonebook</h1>
                 <ContactForm submitFunction={this.addNewContact} />
                 <h2>Contacts</h2>
-                <Filter changeFunction={this.findContactsByName} />
-                <ContactList className="contactList" items={this.renderContactList()} />
+                <Filter className="filterInput" changeFunction={this.handleChange} />
+                <ContactList className="contactList" items={this.state.filter === "" ? this.state.contacts : this.findContactsByName() } />
             </div>
         );
     }
