@@ -39,11 +39,12 @@ export class Phonebook extends Component {
         const contactList = document.querySelector(".contactList");
 
         if (userSearchData === "") {
-            contactList.innerHTML = this.renderContactList();
+            contactList.innerHTML = this.renderContactList().join(" ");
         }
         else { 
             const searchResults = this.state.contacts.filter(contact => contact.name.includes(userSearchData));
-            contactList.innerHTML = searchResults.map(contact => <li key={contact.id}>{contact.name}: {contact.number}</li>);
+            console.log(searchResults);
+            contactList.innerHTML = searchResults.map(contact => `<li key=${contact.id}>${contact.name}: ${contact.number}</li>`).join(" ");
         }
     };
 
@@ -69,7 +70,7 @@ export class Phonebook extends Component {
                         <input
                         type="tel"
                         name="number"
-                        pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+                        ///pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                         required
                         />
