@@ -1,11 +1,37 @@
 import { Component } from "react";
 //import propTypes from "prop-types";
-//import { nanoid } from 'nanoid';
+import { nanoid } from 'nanoid';
 
 export class ContactForm extends Component {
+    state = {
+        id: "",
+        name: "",
+        number: ""
+    }
+
+    addNewContact = event => {
+        event.preventDefault();
+
+        const {name, number} = event.currentTarget.elements;
+        const idData = nanoid();
+        const nameData = name.value;
+        const numberData = number.value;
+        
+        let contactsData = this.state.contacts;
+        contactsData.push({ id: idData, name: nameData, number: numberData });
+        this.setState({contacts: contactsData});
+        console.log(this.state.contacts);
+
+        event.currentTarget.reset();
+    }
+    
+    reset = () => {
+        this.setState({ filter: "", name: "", number: "" });
+    };
+
     render() {
         return(
-            <form className="phonebook" onSubmit={this.props.submitFunction}>
+            <form className="phonebook" onSubmit={this.props.submitFunction} value={this.state}>
                 <label>
                     <h3>Name</h3>
                     <input
