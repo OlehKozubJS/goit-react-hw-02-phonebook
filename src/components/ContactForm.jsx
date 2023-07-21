@@ -35,25 +35,6 @@ export class Phonebook extends Component {
         this.setState({ filter: "", name: "", number: "" });
     };
 
-    renderContactList = () => {
-        return this.state.contacts.map(contact => <li key={contact.id}>{contact.name}: {contact.number}</li>);
-    }
-
-    findContactsByName = event => {
-        const userSearchData = event.currentTarget.value;
-        const contactList = document.querySelector(".contactList");
-
-        contactList.innerHTML = "";
-
-        if (userSearchData === "") {
-            contactList.append(...this.renderContactList());
-        }
-        else { 
-            const searchResults = this.state.contacts.filter(contact => contact.name.toLowerCase().includes(userSearchData.toLowerCase()));
-            contactList.append(...searchResults.map(searchResult => <li key={searchResult.id}>{searchResult.name}: {searchResult.number}</li>));
-        }
-    };
-
     render() {
         return(
             <form className="phonebook" onSubmit={this.addNewContact}>
