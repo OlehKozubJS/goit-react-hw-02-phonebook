@@ -84,7 +84,7 @@ export class Phonebook extends Component {
                     <h3>Find contacts by name</h3>
                     <input type="text" onChange={this.findContactsByName} />
                     <ul className="contactList">
-                        {this.renderContactList()}
+
                     </ul>
                 </div>
             </div>
@@ -92,6 +92,8 @@ export class Phonebook extends Component {
     }
 }
 /*
+                        {this.renderContactList()}
+
 Phonebook.propTypes = {
     name: propTypes.string.isRequired
 };
