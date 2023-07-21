@@ -39,12 +39,12 @@ export class Phonebook extends Component {
         const contactList = document.querySelector(".contactList");
 
         if (userSearchData === "") {
-            contactList.innerHTML = this.renderContactList().join(" ");
+            contactList.append(...this.renderContactList());
         }
         else { 
             const searchResults = this.state.contacts.filter(contact => contact.name.includes(userSearchData));
             console.log(searchResults);
-            contactList.innerHTML = searchResults.map(contact => `<li key=${contact.id}>${contact.name}: ${contact.number}</li>`).join(" ");
+            contactList.append(...searchResults.map(contact => `<li key=${contact.id}>${contact.name}: ${contact.number}</li>`));
         }
     };
 
