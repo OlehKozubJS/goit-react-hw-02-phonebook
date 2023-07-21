@@ -17,10 +17,7 @@ export class ContactForm extends Component {
         const nameData = name.value;
         const numberData = number.value;
         
-        let contactsData = this.state.contacts;
-        contactsData.push({ id: idData, name: nameData, number: numberData });
-        this.setState({contacts: contactsData});
-        console.log(this.state.contacts);
+        this.setState({ id: idData, name: nameData, number: numberData });
 
         event.currentTarget.reset();
     }
