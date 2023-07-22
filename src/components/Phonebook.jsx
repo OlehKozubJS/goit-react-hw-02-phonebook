@@ -1,8 +1,7 @@
 import { Component } from "react";
 import { ContactForm } from "./ContactForm";
 import { ContactList } from "./ContactList";
-//import { Filter } from "./Filter";
-//import propTypes from "prop-types";
+import { Filter } from "./Filter";
 import { nanoid } from 'nanoid';
 
 export class Phonebook extends Component {
@@ -40,22 +39,13 @@ export class Phonebook extends Component {
 
     render() {
         return(
-
-
             <div>
                 <h1>Phonebook</h1>
                 <ContactForm submitFunction={this.addNewContact} />
                 <h2>Contacts</h2>
-                <Filter className="filterInput" value={this.state.filter} changeFunction={this.handleChange} />
+                <Filter className="filterInput" valueData={this.state.filter} changeFunction={this.handleChange} />
                 <ContactList className="contactList" items={this.state.filter === "" ? this.state.contacts : this.findContactsByName() } />
             </div>
         );
     }
 }
-/*
-<Filter className="filterInput" changeFunction={this.handleChange} />
-<input className="filterInput" value={this.state.filter} type="text" onChange={this.handleChange} />
-Phonebook.propTypes = {
-    name: propTypes.string.isRequired
-};
-*/
