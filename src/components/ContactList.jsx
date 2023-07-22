@@ -1,16 +1,17 @@
 import { Component } from "react";
 import propTypes from "prop-types";
+import ContactListStyles from "./PhonebookCSS/ContactList.module.css";
 
 export class ContactList extends Component {
     render() {
         return (
-            <ul>
+            <ul className={ContactListStyles.ContactList}>
                 {
                     this.props.items.map(
                         item => (
-                            <li key={item.id}>
-                                <span>{item.name}: {item.number}</span>
-                                <button data-id={item.id} onClick={this.props.clickFunction}>Delete</button>
+                            <li key={item.id} className={ContactListStyles.ContactListItem}>
+                                <span className={ContactListStyles.ContactListItemText}>{item.name}: {item.number}</span>
+                                <button data-id={item.id}  className={ContactListStyles.ContactListItemButton} onClick={this.props.clickFunction}>Delete</button>
                             </li>
                         )
                     )
