@@ -68,8 +68,8 @@ input:focus-within {
 }
 
 .submitButton:active {
-    border: 5px double rgb(170, 190, 210);
-    background-color: rgb(170, 190, 210);
+    border: 5px double rgb(230, 240, 250);
+    background-color: rgb(130, 170, 190);
     color: white;
 }
 
