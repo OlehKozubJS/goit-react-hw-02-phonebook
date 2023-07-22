@@ -1,5 +1,10 @@
 .ContactList {
     width: 100%;
+    
+    list-style: none;
+    margin: 0;
+    padding-inline: 0;
+    
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -8,9 +13,6 @@
 
 .ContactListItem {
     width: 100%;
-    list-style: none;
-    padding-inline: 0;
-
     border-radius: 0 25px 0 25px;
     background-color: rgb(230, 230, 250);
     border: 3px double rgb(190, 190, 230);
