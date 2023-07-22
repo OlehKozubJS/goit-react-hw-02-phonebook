@@ -16,8 +16,13 @@
     border-radius: 0 25px 0 25px;
     background-color: rgb(230, 230, 250);
     border: 3px double rgb(190, 190, 230);
+    padding-inline: 25px;
     font-family: 'Satisfy', cursive;
     font-size: 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .ContactListItemText {
