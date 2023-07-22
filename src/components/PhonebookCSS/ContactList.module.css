@@ -42,5 +42,7 @@
 }
 
 .ContactListItemButton:active {
+    border: 5px double rgb(245, 245, 255);
+    color: rgb(245, 245, 255);
     background-color: rgb(130, 130, 190);
 }
