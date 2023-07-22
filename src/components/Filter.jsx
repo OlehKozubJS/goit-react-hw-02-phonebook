@@ -2,11 +2,8 @@ import { Component } from "react";
 import propTypes from "prop-types";
 
 export class Filter extends Component {
-    constructor (props) {
-        super(props);
-        this.state = {
-            filter: ""
-        }
+    state = {
+        filter: ""
     }
 
     handleChange = evt => {
