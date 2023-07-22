@@ -73,7 +73,7 @@ input:focus-within {
 
 .submitButton:active {
     border: 5px double white;
-    background-color: rgb(130, 170, 190);
+    background-color: rgb(170, 190, 210);
     color: white;
     border-radius: 25px 0 25px 0;
 }
