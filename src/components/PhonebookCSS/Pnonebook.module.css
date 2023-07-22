@@ -50,6 +50,18 @@ input:focus-within {
     border-radius: 50px 0 50px 0;
 }
 
+.submitButton {
+    display: block;
+    height: 25px;
+    width: 200px;
+    border: 1px solid rgb(190, 210, 230);
+    border-radius: 0 25px 0 25px;
+    background-color: rgb(230, 240, 250);
+    font-family: 'Lugrasimo', cursive;
+    font-size: 20px;
+    color: rgb(130, 170, 190);
+}
+
 li {
     font-family: 'Satisfy', cursive;
     font-size: 25px;

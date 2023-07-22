@@ -28,7 +28,7 @@ export class ContactForm extends Component {
                         required
                     />
                 </label>
-                <button type="submit">Add contact</button>
+                <button className={style.submitButton} type="submit">Add contact</button>
             </form>
         );
     }
