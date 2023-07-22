@@ -52,7 +52,7 @@ input:focus-within {
 
 .submitButton {
     display: block;
-    height: 25px;
+    height: 35px;
     width: 200px;
     border: 1px solid rgb(190, 210, 230);
     border-radius: 0 25px 0 25px;
@@ -60,6 +60,17 @@ input:focus-within {
     font-family: 'Lugrasimo', cursive;
     font-size: 20px;
     color: rgb(130, 170, 190);
+}
+
+.submitButton:hover,
+.submitButton:focus {
+    background-color: white;
+}
+
+.submitButton:active {
+    border: 5px double rgb(170, 190, 210);
+    background-color: rgb(170, 190, 210);
+    color: white;
 }
 
 li {
