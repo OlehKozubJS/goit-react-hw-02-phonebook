@@ -45,7 +45,7 @@ export class Phonebook extends Component {
     render() {
         return(
             <div>
-                <h1>Phonebook</h1>
+                <h1 className={style.phonebookHeader}>Phonebook</h1>
                 <ContactForm submitFunction={this.addNewContact} />
                 <h2>Contacts</h2>
                 <Filter className="filterInput" changeFunction={this.enterFilterData} />
