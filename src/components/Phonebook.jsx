@@ -22,7 +22,6 @@ export class Phonebook extends Component {
         let contactsData = this.state.contacts;
         contactsData.push({ id: nanoid(), name: name.value, number: number.value });
         this.setState({contacts: contactsData});
-        console.log(this.state.contacts);
 
         event.currentTarget.reset();
     }
