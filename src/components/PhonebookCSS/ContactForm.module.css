@@ -31,13 +31,13 @@
     color: rgb(130, 170, 190);
 }
 
-.contactFormSubmitButton:not(:hover) {
-    background-color: rgb(230, 240, 250);
-}
-
 button:hover,
 button:focus {
     background-color: rgb(245, 250, 255);
+}
+
+.contactFormSubmitButton:not(:hover) {
+    background-color: rgb(230, 240, 250);
 }
 
 .contactFormSubmitButton:active {
