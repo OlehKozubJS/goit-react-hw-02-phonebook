@@ -39,7 +39,7 @@ export class Phonebook extends Component {
 
     deleteContact = event => {
         const contactId = event.currentTarget.dataset.id;
-        
+        this.setState({contacts: this.state.contacts.filter(contact => contact.id !== contactId)});
     }
 
     render() {
