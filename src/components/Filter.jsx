@@ -6,13 +6,9 @@ export class Filter extends Component {
         filter: ""
     }
 
-    handleChange = evt => {
-        this.setState({ filter: evt.currentTarget.value });
-    }
-
     render() {
         return (
-            <div data-value={this.state.value}>
+            <div>
                 <h3>Find contacts by name</h3>
                 <input type="text" value={this.props.value} onChange={this.props.changeFunction} />
             </div>
