@@ -44,7 +44,7 @@ export class Phonebook extends Component {
                 <h1>Phonebook</h1>
                 <ContactForm submitFunction={this.addNewContact} />
                 <h2>Contacts</h2>
-                <Filter className="filterInput" valueData={this.state.filter} changeFunction={this.handleChange} />
+                <Filter className="filterInput" changeFunction={this.handleChange} />
                 <ContactList className="contactList" items={this.state.filter === "" ? this.state.contacts : this.findContactsByName() } />
             </div>
         );
