@@ -1,10 +1,24 @@
 .phonebookHeader {
-    font-size: 54px;
-    line-height: 1;
+    font-size: 32px;
 }
 
 .contactsHeader {
     font-size: 24px;
-    line-height: 1;
-    color: red;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+label {
+    display: block;
+    height: 52px;
+}
+
+input {
+    display: block;
+}
+
+li {
+    font-size: 16px;
 }

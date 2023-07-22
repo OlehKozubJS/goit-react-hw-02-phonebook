@@ -3,7 +3,7 @@ import { ContactForm } from "./ContactForm";
 import { ContactList } from "./ContactList";
 import { Filter } from "./Filter";
 import { nanoid } from 'nanoid';
-import style from "./PhonebookCSS/Pnonebook.css";
+import style from "./PhonebookCSS/Pnonebook.module.css";
 
 export class Phonebook extends Component {
     state = {
