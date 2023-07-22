@@ -6,7 +6,7 @@ export class Filter extends Component {
         return (
             <div>
                 <h3>Find contacts by name</h3>
-                <input type="text" value={this.props.value} onChange={this.props.changeFunction} />
+                <input type="text" onChange={this.props.changeFunction} />
             </div>
         )
     }
