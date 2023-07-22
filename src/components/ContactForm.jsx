@@ -1,15 +1,17 @@
 import { Component } from "react";
 import propTypes from "prop-types";
-import style from "./PhonebookCSS/Pnonebook.module.css";
+import PhonebookStyles from "./PhonebookCSS/Pnonebook.module.css";
+import ContactFormStyles from "./PhonebookCSS/ContactForm.module.css";
 
 export class ContactForm extends Component {
     render() {
         return(
-            <form className="phonebook" onSubmit={this.props.submitFunction} value={this.state}>
-                <label className={style.nameLabel} htmlFor="name">
-                    <h3>Name</h3>
+            <form className={ContactFormStyles.contactForm} onSubmit={this.props.submitFunction} value={this.state}>
+                <label className={PhonebookStyles.nameLabel} htmlFor="name">
+                    <h3 className={ContactFormStyles.contactFormInputHeader}>Name</h3>
                     <input
                         type="text"
+                        className={ContactFormStyles.contactFormInput}
                         id="name"
                         name="name"
                         pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -17,18 +19,19 @@ export class ContactForm extends Component {
                         required
                     />
                 </label>
-                <label className={style.numberLabel} htmlFor="number">
-                    <h3>Number</h3>
+                <label className={PhonebookStyles.numberLabel} htmlFor="number">
+                    <h3 className={ContactFormStyles.contactFormInputHeader}>Number</h3>
                     <input
                         type="tel"
                         id="number"
                         name="number"
+                        className={ContactFormStyles.contactFormInput}
                         pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
                         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                         required
                     />
                 </label>
-                <button className={style.submitButton} type="submit">Add contact</button>
+                <button className={ContactFormStyles.contactFormSubmitButton} type="submit">Add contact</button>
             </form>
         );
     }
