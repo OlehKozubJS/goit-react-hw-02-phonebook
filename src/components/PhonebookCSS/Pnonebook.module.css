@@ -51,7 +51,6 @@ input:focus-within {
 button {
     display: block;
     height: 35px;
-    width: 200px;
     border-radius: 0 25px 0 25px;
     font-family: 'Lugrasimo', cursive;
     font-size: 20px;
