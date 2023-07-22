@@ -33,7 +33,7 @@ export class Phonebook extends Component {
         return searchResults;
     }
 
-    handleChange = event => {
+    enterFilterData = event => {
         this.setState({ filter: event.currentTarget.value });
     }
 
@@ -48,7 +48,7 @@ export class Phonebook extends Component {
                 <h1>Phonebook</h1>
                 <ContactForm submitFunction={this.addNewContact} />
                 <h2>Contacts</h2>
-                <Filter className="filterInput" changeFunction={this.handleChange} />
+                <Filter className="filterInput" changeFunction={this.enterFilterData} />
                 <ContactList
                     className="contactList"
                     items={this.state.filter === "" ? this.state.contacts : this.findContactsByName() }
