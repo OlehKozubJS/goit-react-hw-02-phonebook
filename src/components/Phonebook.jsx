@@ -38,6 +38,8 @@ export class Phonebook extends Component {
         console.log(evt.currentTarget.value);
     }
 
+    
+
     render() {
         return(
             <div>
@@ -45,7 +47,11 @@ export class Phonebook extends Component {
                 <ContactForm submitFunction={this.addNewContact} />
                 <h2>Contacts</h2>
                 <Filter className="filterInput" changeFunction={this.handleChange} />
-                <ContactList className="contactList" items={this.state.filter === "" ? this.state.contacts : this.findContactsByName() } />
+                <ContactList
+                    className="contactList"
+                    items={this.state.filter === "" ? this.state.contacts : this.findContactsByName() }
+                    clickFunction={this.deleteContact}
+                />
             </div>
         );
     }
