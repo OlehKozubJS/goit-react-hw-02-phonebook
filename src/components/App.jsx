@@ -12,7 +12,7 @@ export const App = () => {
                 color: '#010101'
             }}
         >
-              <Phonebook name="Enter new Name" />
+              <Phonebook />
         </div>
     );
 };
