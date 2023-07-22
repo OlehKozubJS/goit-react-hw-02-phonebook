@@ -33,12 +33,13 @@ export class Phonebook extends Component {
         return searchResults;
     }
 
-    handleChange = evt => {
-        this.setState({ filter: evt.currentTarget.value });
-        console.log(evt.currentTarget.value);
+    handleChange = event => {
+        this.setState({ filter: event.currentTarget.value });
     }
 
-    
+    deleteContact = event => {
+        
+    }
 
     render() {
         return(
