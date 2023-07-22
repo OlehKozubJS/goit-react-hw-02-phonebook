@@ -1,8 +1,8 @@
 .ContactList {
     width: 100%;
-    
+
     list-style: none;
-    margin: 0;
+    margin-inline: 0;
     padding-inline: 0;
     
     display: flex;
