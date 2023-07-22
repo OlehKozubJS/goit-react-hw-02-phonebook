@@ -29,7 +29,7 @@ export class Phonebook extends Component {
     }
 
     findContactsByName = event => {
-        const userSearchData = document.querySelector(".filterInput").value;
+        const userSearchData = this.state.filter;
         const searchResults = this.state.contacts.filter(contact => contact.name.toLowerCase().includes(userSearchData.toLowerCase()));
         return searchResults;
     }
@@ -46,8 +46,7 @@ export class Phonebook extends Component {
                 <h1>Phonebook</h1>
                 <ContactForm submitFunction={this.addNewContact} />
                 <h2>Contacts</h2>
-
-                <input className="filterInput" value={this.state.filter} type="text" onChange={this.handleChange} />
+                <Filter className="filterInput" value={this.state.filter} changeFunction={this.handleChange} />
                 <ContactList className="contactList" items={this.state.filter === "" ? this.state.contacts : this.findContactsByName() } />
             </div>
         );
@@ -55,7 +54,7 @@ export class Phonebook extends Component {
 }
 /*
 <Filter className="filterInput" changeFunction={this.handleChange} />
-
+<input className="filterInput" value={this.state.filter} type="text" onChange={this.handleChange} />
 Phonebook.propTypes = {
     name: propTypes.string.isRequired
 };
