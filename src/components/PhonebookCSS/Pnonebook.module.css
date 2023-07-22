@@ -3,11 +3,13 @@
 .phonebookHeader {
     font-family: 'Lugrasimo', cursive;
     font-size: 35px;
+    color: rgb(170, 130, 190);
 }
 
 .contactsHeader {
     font-family: 'Lugrasimo', cursive;
     font-size: 30px;
+    color: rgb(170, 130, 130);
 }
 
 h3 {
