@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lugrasimo&family=Satisfy&display=swap');
 
+body {
+    background-color: rgb(245, 245, 255);
+}
+
 .phonebook {
     width: 500px;
 }
