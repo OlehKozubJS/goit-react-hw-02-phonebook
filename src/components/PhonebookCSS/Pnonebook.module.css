@@ -67,10 +67,15 @@ input:focus-within {
     background-color: white;
 }
 
+.submitButton:not(:hover) {
+    background-color: rgb(230, 240, 250);
+}
+
 .submitButton:active {
-    border: 5px double rgb(230, 240, 250);
+    border: 5px double white;
     background-color: rgb(130, 170, 190);
     color: white;
+    border-radius: 25px 0 25px 0;
 }
 
 li {
