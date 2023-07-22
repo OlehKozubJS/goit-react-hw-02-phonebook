@@ -1,13 +1,12 @@
 import { Component } from "react";
 import propTypes from "prop-types";
-import PhonebookStyles from "./PhonebookCSS/Pnonebook.module.css";
 import ContactFormStyles from "./PhonebookCSS/ContactForm.module.css";
 
 export class ContactForm extends Component {
     render() {
         return(
             <form className={ContactFormStyles.contactForm} onSubmit={this.props.submitFunction} value={this.state}>
-                <label className={PhonebookStyles.nameLabel} htmlFor="name">
+                <label htmlFor="name">
                     <h3 className={ContactFormStyles.contactFormInputHeader}>Name</h3>
                     <input
                         type="text"
@@ -19,7 +18,7 @@ export class ContactForm extends Component {
                         required
                     />
                 </label>
-                <label className={PhonebookStyles.numberLabel} htmlFor="number">
+                <label htmlFor="number">
                     <h3 className={ContactFormStyles.contactFormInputHeader}>Number</h3>
                     <input
                         type="tel"
