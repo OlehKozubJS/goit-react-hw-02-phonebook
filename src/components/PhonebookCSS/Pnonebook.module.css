@@ -5,12 +5,14 @@
 }
 
 .phonebookHeader {
+    text-align: center;
     font-family: 'Lugrasimo', cursive;
     font-size: 35px;
     color: rgb(170, 130, 190);
 }
 
 .contactsHeader {
+    text-align: center;
     font-family: 'Lugrasimo', cursive;
     font-size: 30px;
     color: rgb(170, 130, 130);
@@ -31,6 +33,10 @@ h3 {
 label {
     display: block;
     height: 72px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 input {
