@@ -5,7 +5,16 @@ export class ContactList extends Component {
     render() {
         return (
             <ul>
-                {this.props.items.map(item => <li key={item.id}><span>{item.name}: {item.number}</span><button data-id={item.id} onClick={this.props.clickFunction}>Delete</button></li>)}
+                {
+                    this.props.items.map(
+                        item => (
+                            <li key={item.id}>
+                                <span>{item.name}: {item.number}</span>
+                                <button data-id={item.id} onClick={this.props.clickFunction}>Delete</button>
+                            </li>
+                        )
+                    )
+                }
             </ul>
         )
     }
