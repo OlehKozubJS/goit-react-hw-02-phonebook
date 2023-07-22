@@ -38,7 +38,7 @@ export class Phonebook extends Component {
     }
 
     deleteContact = event => {
-        
+        event.currentTarget.dataset.id;
     }
 
     render() {
