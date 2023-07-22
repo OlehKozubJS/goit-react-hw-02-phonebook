@@ -47,7 +47,7 @@ export class Phonebook extends Component {
             <div>
                 <h1 className={style.phonebookHeader}>Phonebook</h1>
                 <ContactForm submitFunction={this.addNewContact} />
-                <h2>Contacts</h2>
+                <h2 className={style.contactsHeader}>Contacts</h2>
                 <Filter className="filterInput" changeFunction={this.enterFilterData} />
                 <ContactList
                     className="contactList"
