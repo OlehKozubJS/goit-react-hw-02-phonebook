@@ -20,9 +20,15 @@ export class Phonebook extends Component {
         event.preventDefault();
 
         const {name, number} = event.currentTarget.elements;     
-        let contactsData = this.state.contacts;
-        contactsData.push({ id: nanoid(), name: name.value, number: number.value });
-        this.setState({contacts: contactsData});
+
+        if (this.state.contacts.some(contact => contact.name === name.value)) {
+            alert (`${name.value} is already in contacts!`);
+        }
+        else {
+            let contactsData = this.state.contacts;
+            contactsData.push({ id: nanoid(), name: name.value, number: number.value });
+            this.setState({contacts: contactsData});
+        }
 
         event.currentTarget.reset();
     }
