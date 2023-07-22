@@ -5,7 +5,7 @@ export class ContactList extends Component {
     render() {
         return (
             <ul>
-                {this.props.items.map(item => <li key={item.id}>{item.name}: {item.number}</li>)}
+                {this.props.items.map(item => <li key={item.id}><span>{item.name}: {item.number}</span><button data-id={item.id} onClick={this.props.clickFunction}>Delete</button></li>)}
             </ul>
         )
     }
@@ -19,6 +19,7 @@ ContactList.propTypes = {
                 name: propTypes.string.isRequired,
                 number: propTypes.string.isRequired
             }
-        )
-    ).isRequired
+        ).isRequired
+    ).isRequired,
+    clickFunction: propTypes.func.isRequired
 }
