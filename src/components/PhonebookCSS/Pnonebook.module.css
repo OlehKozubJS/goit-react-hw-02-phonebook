@@ -33,8 +33,10 @@ input {
     box-sizing: border-box;
     display: block;
     border-radius: 0 50px 0 50px;
-    padding-inline: 15px;
+    padding-left: 35px;
     width: 250px;
+    font-family: 'Lugrasimo', cursive;
+    font-size: 25px;
 }
 
 input:focus-within {
