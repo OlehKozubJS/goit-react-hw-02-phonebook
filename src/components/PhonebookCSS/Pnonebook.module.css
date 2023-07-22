@@ -58,6 +58,7 @@ button {
     display: block;
     height: 35px;
     border-radius: 0 25px 0 25px;
+    padding-inline: 25px;
     font-family: 'Lugrasimo', cursive;
     font-size: 20px;
 }
