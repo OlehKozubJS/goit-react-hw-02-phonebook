@@ -4,10 +4,10 @@ import propTypes from "prop-types";
 export class Filter extends Component {
     render() {
         return (
-            <div>
+            <label>
                 <h3>Find contacts by name</h3>
                 <input type="text" onChange={this.props.changeFunction} />
-            </div>
+            </label>
         )
     }
 } 
