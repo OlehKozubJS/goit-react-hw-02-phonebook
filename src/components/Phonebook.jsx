@@ -27,7 +27,7 @@ export class Phonebook extends Component {
         event.currentTarget.reset();
     }
 
-    findContactsByName = event => {
+    findContactsByName = () => {
         const userSearchData = this.state.filter;
         const searchResults = this.state.contacts.filter(contact => contact.name.toLowerCase().includes(userSearchData.toLowerCase()));
         return searchResults;
@@ -35,6 +35,7 @@ export class Phonebook extends Component {
 
     handleChange = evt => {
         this.setState({ filter: evt.currentTarget.value });
+        console.log(evt.currentTarget.value);
     }
 
     render() {
