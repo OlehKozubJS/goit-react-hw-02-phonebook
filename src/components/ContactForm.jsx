@@ -5,20 +5,22 @@ export class ContactForm extends Component {
     render() {
         return(
             <form className="phonebook" onSubmit={this.props.submitFunction} value={this.state}>
-                <label>
+                <label htmlFor="name">
                     <h3>Name</h3>
                     <input
                         type="text"
+                        id="name"
                         name="name"
                         pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                         required
                     />
                 </label>
-                <label>
+                <label htmlFor="number">
                     <h3>Number</h3>
                     <input
                         type="tel"
+                        id="number"
                         name="number"
                         pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
                         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
