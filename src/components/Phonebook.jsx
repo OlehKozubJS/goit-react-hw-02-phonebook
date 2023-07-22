@@ -3,7 +3,7 @@ import { ContactForm } from "./ContactForm";
 import { ContactList } from "./ContactList";
 import { Filter } from "./Filter";
 import { nanoid } from 'nanoid';
-import style from "./PhonebookCSS/Pnonebook.module.css";
+import PhonebookStyles from "./PhonebookCSS/Pnonebook.module.css";
 
 export class Phonebook extends Component {
     state = {
@@ -44,10 +44,10 @@ export class Phonebook extends Component {
 
     render() {
         return(
-            <div>
-                <h1 className={style.phonebookHeader}>Phonebook</h1>
+            <div class={PhonebookStyles.phonebook}>
+                <h1 className={PhonebookStyles.phonebookHeader}>Phonebook</h1>
                 <ContactForm submitFunction={this.addNewContact} />
-                <h2 className={style.contactsHeader}>Contacts</h2>
+                <h2 className={PhonebookStyles.contactsHeader}>Contacts</h2>
                 <Filter className="filterInput" changeFunction={this.enterFilterData} />
                 <ContactList
                     className="contactList"
