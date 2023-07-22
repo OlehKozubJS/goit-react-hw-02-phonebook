@@ -20,7 +20,8 @@ form {
 
 }
 
-label {
+.nameLabel,
+.numberLabel {
     display: block;
     height: 72px;
 }
