@@ -5,7 +5,7 @@ import FilterStyles from "./PhonebookCSS/Filter.module.css";
 export class Filter extends Component {
     render() {
         return (
-            <label htmlFor="searchInput">
+            <label htmlFor="searchInput" className={FilterStyles.searchInputLabel}>
                 <h3 className={FilterStyles.searchInputHeader}>Find contacts by name</h3>
                 <input type="text" id="searchInput"  className={FilterStyles.searchInput} onChange={this.props.changeFunction} />
             </label>
