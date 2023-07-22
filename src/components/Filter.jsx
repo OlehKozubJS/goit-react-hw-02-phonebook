@@ -2,10 +2,6 @@ import { Component } from "react";
 import propTypes from "prop-types";
 
 export class Filter extends Component {
-    state = {
-        filter: ""
-    }
-
     render() {
         return (
             <div>
