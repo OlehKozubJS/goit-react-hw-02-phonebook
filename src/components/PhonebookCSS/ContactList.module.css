@@ -12,6 +12,7 @@
 }
 
 .ContactListItem {
+    box-sizing: border-box;
     width: 100%;
     border-radius: 0 25px 0 25px;
     background-color: rgb(230, 230, 250);
