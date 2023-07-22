@@ -4,9 +4,9 @@ import propTypes from "prop-types";
 export class Filter extends Component {
     render() {
         return (
-            <label>
+            <label htmlFor="searchInput">
                 <h3>Find contacts by name</h3>
-                <input type="text" onChange={this.props.changeFunction} />
+                <input id="searchInput" type="text" onChange={this.props.changeFunction} />
             </label>
         )
     }
