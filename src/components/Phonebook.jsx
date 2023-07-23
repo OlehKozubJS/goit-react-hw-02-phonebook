@@ -38,14 +38,18 @@ export class Phonebook extends Component {
         event.currentTarget.reset();
     }
 
-    findContactsByName = () => {
-        const userSearchData = this.state.filter;
-        const searchResults = this.state.contacts.filter(contact => contact.name.toLowerCase().includes(userSearchData.toLowerCase()));
-        return searchResults;
+    closeAlert = () => {
+        this.setState({isInContacts: false, name: ""});
     }
 
     enterFilterData = event => {
         this.setState({ filter: event.currentTarget.value });
+    }
+
+    findContactsByName = () => {
+        const userSearchData = this.state.filter;
+        const searchResults = this.state.contacts.filter(contact => contact.name.toLowerCase().includes(userSearchData.toLowerCase()));
+        return searchResults;
     }
 
     deleteContact = event => {
@@ -58,7 +62,7 @@ export class Phonebook extends Component {
             <div className={PhonebookStyles.phonebook}>
                 <h1 className={PhonebookStyles.phonebookHeader}>Phonebook</h1>
                 <ContactForm submitFunction={this.addNewContact} />
-                <Alert isInContacts={this.state.isInContacts} name={this.state.name} />
+                <Alert isInContacts={this.state.isInContacts} name={this.state.name} clickFunction={this.closeAlert} />
                 <h2 className={PhonebookStyles.contactsHeader}>Contacts</h2>
                 <Filter className="filterInput" changeFunction={this.enterFilterData} />
                 <ContactList
