@@ -15,6 +15,8 @@ export class Phonebook extends Component {
             {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
         ],
         filter: "",
+        isInContacts: false,
+        name: ""
     }
 
     addNewContact = async event => {
@@ -23,9 +25,11 @@ export class Phonebook extends Component {
         const {name, number} = event.currentTarget.elements;     
 
         if (this.state.contacts.some(contact => contact.name === name.value)) {
+            this.setState({isInContacts: true, name: name.value});
             alert (`${name.value} is already in contacts!`);
         }
         else {
+            this.setState({isInContacts: false, name: ""});
             let contactsData = this.state.contacts;
             contactsData.push({ id: nanoid(), name: name.value, number: number.value });
             this.setState({contacts: contactsData});
