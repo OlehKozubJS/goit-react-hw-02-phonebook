@@ -5,7 +5,7 @@ export const ContactList = ({items, clickFunction}) => {
     return (
         <ul className={ContactListStyles.contactList}>
             {
-                this.props.items.map(
+                items.map(
                     item => (
                         <li key={item.id} className={ContactListStyles.contactListItem}>
                             <span className={ContactListStyles.contactListItemText}>{item.name}: {item.number}</span>
