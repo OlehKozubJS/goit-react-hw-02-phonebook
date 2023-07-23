@@ -1,30 +1,27 @@
-import { Component } from "react";
 import propTypes from "prop-types";
 import ContactListStyles from "./PhonebookCSS/ContactList.module.css";
 
-export class ContactList extends Component {
-    render() {
-        return (
-            <ul className={ContactListStyles.contactList}>
-                {
-                    this.props.items.map(
-                        item => (
-                            <li key={item.id} className={ContactListStyles.contactListItem}>
-                                <span className={ContactListStyles.contactListItemText}>{item.name}: {item.number}</span>
-                                <button 
-                                    data-id={item.id}
-                                    className={ContactListStyles.contactListItemButton}
-                                    onClick={event => this.props.clickFunction(event.currentTarget.dataset.id)}
-                                >
-                                    Delete
-                                </button>
-                            </li>
-                        )
+export const ContactList = ({items, clickFunction}) => {
+    return (
+        <ul className={ContactListStyles.contactList}>
+            {
+                this.props.items.map(
+                    item => (
+                        <li key={item.id} className={ContactListStyles.contactListItem}>
+                            <span className={ContactListStyles.contactListItemText}>{item.name}: {item.number}</span>
+                            <button 
+                                data-id={item.id}
+                                className={ContactListStyles.contactListItemButton}
+                                onClick={event => clickFunction(event.currentTarget.dataset.id)}
+                            >
+                                Delete
+                            </button>
+                        </li>
                     )
-                }
-            </ul>
-        )
-    }
+                )
+            }
+        </ul>
+    )
 }
 
 ContactList.propTypes = {
