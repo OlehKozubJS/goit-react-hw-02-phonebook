@@ -19,7 +19,7 @@ export class Phonebook extends Component {
 
         const {name, number} = event.currentTarget.elements;     
 
-        if (this.state.contacts.some(contact => contact.name === name.value)) {
+        if (this.state.contacts.some(contact => contact.name.toLowerCase() === name.value.toLowerCase())) {
             this.setState({isInContacts: true, name: name.value});
         }
         else {
