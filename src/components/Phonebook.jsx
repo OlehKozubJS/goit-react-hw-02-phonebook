@@ -2,6 +2,7 @@ import { Component } from "react";
 import { ContactForm } from "./ContactForm";
 import { ContactList } from "./ContactList";
 import { Filter } from "./Filter";
+import { Alert } from "./Alert";
 import { nanoid } from 'nanoid';
 import PhonebookStyles from "./PhonebookCSS/Pnonebook.module.css";
 
@@ -54,6 +55,7 @@ export class Phonebook extends Component {
                 <h1 className={PhonebookStyles.phonebookHeader}>Phonebook</h1>
                 <ContactForm submitFunction={this.addNewContact} />
                 <h2 className={PhonebookStyles.contactsHeader}>Contacts</h2>
+                <Alert />
                 <Filter className="filterInput" changeFunction={this.enterFilterData} />
                 <ContactList
                     className="contactList"
