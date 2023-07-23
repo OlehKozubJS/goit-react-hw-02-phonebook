@@ -5,13 +5,13 @@ import ContactListStyles from "./PhonebookCSS/ContactList.module.css";
 export class ContactList extends Component {
     render() {
         return (
-            <ul className={ContactListStyles.ContactList}>
+            <ul className={ContactListStyles.contactList}>
                 {
                     this.props.items.map(
                         item => (
-                            <li key={item.id} className={ContactListStyles.ContactListItem}>
-                                <span className={ContactListStyles.ContactListItemText}>{item.name}: {item.number}</span>
-                                <button data-id={item.id}  className={ContactListStyles.ContactListItemButton} onClick={this.props.clickFunction}>Delete</button>
+                            <li key={item.id} className={ContactListStyles.contactListItem}>
+                                <span className={ContactListStyles.contactListItemText}>{item.name}: {item.number}</span>
+                                <button data-id={item.id}  className={ContactListStyles.contactListItemButton} onClick={this.props.clickFunction}>Delete</button>
                             </li>
                         )
                     )
