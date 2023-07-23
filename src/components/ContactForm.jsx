@@ -3,9 +3,17 @@ import propTypes from "prop-types";
 import ContactFormStyles from "./PhonebookCSS/ContactForm.module.css";
 
 export class ContactForm extends Component {
+
+    handleSubmit = event => {
+        event.preventDefault();
+        const {name, number} = event.currentTarget.elements;   
+        this.props.submitFunction({name: name.value, number: number.value});
+        event.currentTarget.reset();
+    }
+
     render() {
         return(
-            <form className={ContactFormStyles.contactForm} onSubmit={this.props.submitFunction} value={this.state}>
+            <form className={ContactFormStyles.contactForm} onSubmit={this.handleSubmit} value={this.state}>
                 <label htmlFor="name">
                     <h3 className={ContactFormStyles.contactFormInputHeader}>Name</h3>
                     <input

@@ -14,22 +14,16 @@ export class Phonebook extends Component {
         name: ""
     }
 
-    addNewContact = async event => {
-        event.preventDefault();
-
-        const {name, number} = event.currentTarget.elements;     
-
-        if (this.state.contacts.some(contact => contact.name.toLowerCase() === name.value.toLowerCase())) {
-            this.setState({isInContacts: true, name: name.value});
+    addNewContact = data => {
+        if (this.state.contacts.some(contact => contact.name.toLowerCase() === data.name.toLowerCase())) {
+            this.setState({isInContacts: true, name: data.name});
+            return;
         }
-        else {
-            this.setState({isInContacts: false, name: ""});
-            let contactsData = this.state.contacts;
-            contactsData.push({ id: nanoid(), name: name.value, number: number.value });
-            this.setState({contacts: contactsData});
-        }
-
-        event.currentTarget.reset();
+        this.setState(
+            state => ({
+                contacts: [...state.contacts, { id: nanoid(), ...data }], isInContacts: false, name: ""
+            })
+        );
     }
 
     closeAlert = () => {
