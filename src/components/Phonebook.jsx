@@ -26,7 +26,6 @@ export class Phonebook extends Component {
 
         if (this.state.contacts.some(contact => contact.name === name.value)) {
             this.setState({isInContacts: true, name: name.value});
-            alert (`${name.value} is already in contacts!`);
         }
         else {
             this.setState({isInContacts: false, name: ""});
