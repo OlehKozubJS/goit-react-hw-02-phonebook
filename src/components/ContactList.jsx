@@ -3,6 +3,11 @@ import propTypes from "prop-types";
 import ContactListStyles from "./PhonebookCSS/ContactList.module.css";
 
 export class ContactList extends Component {
+    contactListDeleteFunction = event => {
+        const buttonId = event.currentTarget.dataset.id;
+        this.props.clickFunction(buttonId);
+    }
+
     render() {
         return (
             <ul className={ContactListStyles.contactList}>
@@ -11,7 +16,7 @@ export class ContactList extends Component {
                         item => (
                             <li key={item.id} className={ContactListStyles.contactListItem}>
                                 <span className={ContactListStyles.contactListItemText}>{item.name}: {item.number}</span>
-                                <button data-id={item.id}  className={ContactListStyles.contactListItemButton} onClick={this.props.clickFunction}>Delete</button>
+                                <button data-id={item.id}  className={ContactListStyles.contactListItemButton} onClick={this.contactListDeleteFunction}>Delete</button>
                             </li>
                         )
                     )
