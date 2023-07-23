@@ -40,9 +40,8 @@ export class Phonebook extends Component {
         return searchResults;
     }
 
-    deleteContact = event => {
-        const contactId = event.currentTarget.dataset.id;
-        this.setState({contacts: this.state.contacts.filter(contact => contact.id !== contactId)});
+    deleteContact = id => {
+        this.setState({contacts: this.state.contacts.filter(contact => contact.id !== id)});
     }
 
     render() {
