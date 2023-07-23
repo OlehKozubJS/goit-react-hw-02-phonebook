@@ -58,7 +58,7 @@ export class Phonebook extends Component {
             <div className={PhonebookStyles.phonebook}>
                 <h1 className={PhonebookStyles.phonebookHeader}>Phonebook</h1>
                 <ContactForm submitFunction={this.addNewContact} />
-                <Alert isInContacts={true} name="Nick" />
+                <Alert isInContacts={this.state.isInContacts} name={this.state.name} />
                 <h2 className={PhonebookStyles.contactsHeader}>Contacts</h2>
                 <Filter className="filterInput" changeFunction={this.enterFilterData} />
                 <ContactList
