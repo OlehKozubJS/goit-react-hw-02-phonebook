@@ -3,7 +3,10 @@ import AlertStyles from "./PhonebookCSS/Alert.module.css";
 
 export const Alert = ({isInContacts, clickFunction, name}) => {
     return (
-        <div className={ isInContacts ? AlertStyles.alert : AlertStyles.hidden} onClick={clickFunction}>{name} is already in contacts!</div>
+        <div className={ isInContacts ? AlertStyles.alert : AlertStyles.hidden}>
+            <span className={AlertStyles.alertText}>{name} is already in contacts!</span>
+            <button className={AlertStyles.alertButton} onClick={clickFunction}>Close</button>
+        </div>
     );
 }
 
