@@ -30,8 +30,8 @@ export class Phonebook extends Component {
         this.setState({isInContacts: false, name: ""});
     }
 
-    enterFilterData = event => {
-        this.setState({ filter: event.currentTarget.value });
+    enterFilterData = value => {
+        this.setState({ filter: value });
     }
 
     findContactsByName = () => {
