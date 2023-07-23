@@ -22,13 +22,14 @@
     font-size: 25px;
 
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
 
 .ContactListItemText {
     display: block;
+    overflow-wrap: break-word;
+    width: 300px;
     color: rgb(130, 130, 190);
 }
 
