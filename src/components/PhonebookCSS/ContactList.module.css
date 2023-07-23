@@ -39,8 +39,8 @@
     color: rgb(130, 130, 190);
 }
 
-button:hover,
-button:focus {
+.ContactListItemButton:hover,
+.ContactListItemButton:focus {
     background-color: rgb(245, 245, 255);
 }
 
