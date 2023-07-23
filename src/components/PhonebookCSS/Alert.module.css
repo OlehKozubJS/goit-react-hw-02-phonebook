@@ -12,3 +12,6 @@
     justify-content: space-evenly;
     align-items: center;
 }
+.hidden {
+    display: none;
+}
