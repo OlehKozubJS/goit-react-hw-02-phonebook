@@ -4,7 +4,9 @@
     background-color: rgb(230, 250, 230);
     border: 3px double rgb(190, 230, 190);
     color: rgb(130, 190, 130);
-    text-align: center;  
+    text-align: center;
+    font-family: 'Lugrasimo', cursive;
+    font-size: 25px;  
     
     display: flex;
     justify-content: space-evenly;
