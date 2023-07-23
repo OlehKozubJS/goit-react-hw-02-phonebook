@@ -8,6 +8,7 @@ export const Alert = ({isInContacts, name}) => {
 }
 
 Alert.propTypes = {
+    isInContacts: propTypes.bool.isRequired,
     name: propTypes.string.isRequired
 }
 
